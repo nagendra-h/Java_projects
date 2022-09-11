@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" errorPage="error1.jsp" %>
-    <%@page import="pack1.workerdatabase"%>  
-<jsp:useBean id="u" class="pack1.worker"></jsp:useBean>  
+    <%@page import="pack1.UserDao"%>  
+<jsp:useBean id="u" class="pack1.User"></jsp:useBean>  
 <jsp:setProperty property="*" name="u"/>  
 <!DOCTYPE html>
 <html>
@@ -11,8 +11,8 @@
 </head>
 <body>
 <%  
-workerdatabase.delete(u);  
-response.sendRedirect("vieeworker.jsp");  
+UserDao.delete(u);  
+response.sendRedirect("viewuser.jsp");  
 %>  
 </body>
 </html>
