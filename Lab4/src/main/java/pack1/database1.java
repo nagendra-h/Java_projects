@@ -7,6 +7,7 @@ public class database1 {
 	public static boolean validate(String name,String password){  
 		boolean status=false;  
 		try{  
+			System.out.println("10"+6);
 		Class.forName("com.mysql.jdbc.Driver");  
 		Connection con=DriverManager.getConnection(  
 		"jdbc:mysql://localhost:3306/java1","root","root");  

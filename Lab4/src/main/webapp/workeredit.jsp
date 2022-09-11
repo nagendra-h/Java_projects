@@ -10,8 +10,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 <%  
-workerdatabase.delete(u);  
+int i=workerdatabase.update(u);
+
 response.sendRedirect("vieeworker.jsp");  
 %>  
 </body>

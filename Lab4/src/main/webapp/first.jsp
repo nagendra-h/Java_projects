@@ -45,7 +45,7 @@ else{ %>
           <a class="nav-link" href="dealer.jsp">DEALER DETAIL</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">WORKER DETAIL</a>
+          <a class="nav-link" href="worker.jsp">WORKER DETAIL</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">CUSTOMER DETAIL</a>

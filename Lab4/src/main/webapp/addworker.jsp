@@ -11,8 +11,12 @@
 </head>
 <body>
 <%  
-workerdatabase.delete(u);  
-response.sendRedirect("vieeworker.jsp");  
+int i=workerdatabase.save(u);  
+if(i>=1){  
+response.sendRedirect("adduser-success.jsp");  
+}else{  
+response.sendRedirect("error1.jsp");  
+}  
 %>  
 </body>
 </html>

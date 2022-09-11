@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-        <%@page import="pack1.UserDao,pack1.*,pack1.*,java.util.*"%>  
+       <%@page import="pack1.workerdatabase,pack1.*,pack1.*,java.util.*"%>  
    
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,16 +10,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-  
 <%  
 String n=request.getParameter("id");
-List<User> list=(List) UserDao.getRecordById(n);  
+List<User> list=(List) workerdatabase.getRecordById(n);  
 request.setAttribute("list",list);  
 
 %>  
 
 <h1>Edit Form</h1>  
-<form action="edituser.jsp" method="">  
+<form action="workeredit.jsp" method="">  
 <table>  
 <c:forEach items="${list}" var="u">  
 <input type="hidden" name="id" value="${u.getId()}"/>  
