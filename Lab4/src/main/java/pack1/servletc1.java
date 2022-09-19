@@ -1,9 +1,11 @@
 package pack1;
 
 import java.io.IOException;
+
 import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,7 +36,22 @@ public class servletc1 extends HttpServlet {
 		//response.setIntHeader("Refersh",1);
 		
 		String n=(String) request.getParameter("name");
-		String n1=(String) request.getParameter("password");
+	String n1=(String) request.getParameter("password");
+//		ServletConfig cg=getServletConfig();
+//		String l=cg.getInitParameter("name");
+//		String k=cg.getInitParameter("password");
+//		if(l.equalsIgnoreCase("admin") && k.equalsIgnoreCase("admin")) {
+//			HttpSession ses=request.getSession();
+//			ses.setAttribute("name", l);
+//			ses.setAttribute("password",k);
+//			System.out.println("HEllo");
+//			response.sendRedirect("welcome1.html");
+//			
+//		}
+//		else {
+//			response.sendRedirect("Login.html");
+//		}
+		
 
 //		request.setAttribute("name",n);
 //		System.out.println("hello"+n);
@@ -100,6 +117,7 @@ public class servletc1 extends HttpServlet {
 //			ResultSet rs=ps.executeQuery();
 //			rs.next();
 //			response.sendRedirect("welcome.html");
+
 	}
 
 }
