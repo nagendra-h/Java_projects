@@ -6,24 +6,136 @@
 <head>
 <meta charset="UTF-8">
 <title>Watch shop</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  <style>
-  .carousel-item {
-    height: 65vh;
-  min-height: 350px;
-	  background: no-repeat center center scroll;
-	  -webkit-background-size: cover;
-	  -moz-background-size: cover;
-	  -o-background-size: cover;
-	  background-size: cover;
+<style>
+body{
+	background-color:black;
 	}
-  </style>
-  </head>
-<body >
+	.di1{
+		margin:3px;
+		background:url("image/muragan.jpg"),
+			radial-gradient(red,purple);
+		background-attachment:fixed;
+		background-position:top top;
+		background-repeat:no-repeat;
+		margin-bottom:10px;
+		width:auto;
+		height:400px;
+		text-align:center;
+	}
+	.di1 h1{
+		padding-top:80px;
+	}
+	.di1 h2:hover{
+		opacity:0.5;
+		font-weight:bold;
+		text-decoration:underline;
+	}
+	nav{
+	    background-color: rgba(0, 0, 0, 0.705);    
+	    padding: 10px;
+	    padding-left: 50px;
+	    padding-left: 50px;
+	    display: flex;
+	    box-shadow: 0px 3px 65px 0px rgb(157, 0, 255);
+	}
+	
+.nav_side{
+    float: right; 
+    width: 90%;
 
+}
+.nav_side a{
+    float:right;
+    text-decoration: none;
+    margin-right: 30px;
+    padding-top: 20px;
+    font-weight: bold;
+    font-family: serif;
+    font-size: 20px;
+    color:white;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+.nav_side a:hover{
+    color: rgb(157, 0, 255);
+    text-decoration: underline;
+    transition:  0.5s ease ;
+}
+	#logo{
+		float:left;
+		width:250px;
+		color:orange;
+		font-size:30px;
+		text-shadow:2px 2px 5px green;
+		}
+	
+	.tv{
+    padding-bottom: 50px;
+}
+.tv h2{
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    padding: 20px;
+   
+}
+.tv .tv_container{
+    display: flex;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.tv .tv_container .item{
+	width: 33.33%;
+	margin: 20px;
+	height: auto;
+	border: 1px solid  rgb(157, 0, 255);
+}
+.tv .tv_container .item:hover{
+	box-shadow: 0px 3px 65px 0px rgb(17, 0, 255);
+	transition: all 0.5s ease;
+	transform:scale(1.1);
+
+}
+
+.tv .tv_container .item .item_img{
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    
+}
+.tv .tv_container .item .item_img img{
+    width: 100%;
+    height: 200px;
+}
+.tv .tv_container .item .item_content{
+    text-align: center;
+    color: white;
+
+}
+.tv .tv_container .item .item_content h3{
+    padding: 10px;
+    font-size: 25px;
+    font-family: serif;
+
+}
+.tv .tv_container .item .item_content p{
+    padding: 10px;
+    font-size: 20px;
+    font-family: serif;
+    display: none;
+
+}
+.tv .tv_container .item:hover p{
+    display: block;
+    transition: all 0.5s ease;
+}
+
+	
+	</style>
+	</head>
+<body>
 
 
 <%PrintWriter pc=response.getWriter();
@@ -33,6 +145,102 @@ if(session.getAttribute("name")==null){
 }
 else{ %>
 	<!-- Navigation -->
+	
+		<header>
+	<div class="di1">
+		<h1> Ayyappa watch workers</h1>
+		<h2>Udupi </h2>
+	<div>
+	</header>
+	 <nav class="nav nav_top">
+           	 <div id="logo">
+			<marquee behavior="scroll">Watch workers</marquee>            	
+			</div>
+            <div class="nav_side">
+                 <a href="view1.jsp">VIEW</a>
+                  <a  href="billing.jsp">BILLING</a>
+                 <a  href="purchase.jsp">PURCHASE</a>
+                 <a  href="worker.jsp">WORKER</a>
+                  
+                 <a  href="dealer.jsp">DEALER</a>
+              
+            </div>
+        </nav>
+
+
+  <div class="tv">
+         	 <h2><b>Trending</b></h2>
+              		<div class="tv_container">
+                  			<div class="item">
+                 				<div class="item_img">
+              						<img src="image/boat.jpg" >
+                 				</div>
+                 	<div class="item_content">
+                     		<h3>boAt</h3>
+                     		<p>boAt Wave Call Smart Watch</p>
+                   	</div>
+        	</div>
+                  <div class="item">
+                 <div class="item_img">
+                     <img src="image/gts2min.jpg">
+                 </div>
+                 <div class="item_content">
+                     <h3>Amazfit </h3>
+                     <p>GTS2 Mini Smart Watch</p>
+               
+                 </div>
+             </div>
+     
+             <div class="item">
+                 <div class="item_img">
+                     <img src="image/lyt.jpg">
+                 </div>
+                 <div class="item_content">
+                     <h3>lyt</h3>
+                	<p>Crossbeats Ignite LYT Smart Watch </p>
+               
+                 </div>
+             </div>
+              </div>
+
+ <hr style="color:purple">
+              <div class="tv">
+                    <div class="tv_container">
+           
+                   <div class="item">
+                       <div class="item_img">
+                           <img src="image/redux.jpg">
+                       </div>
+                       <div class="item_content">
+                           <h3>Redux</h3>
+                           <p> RWS0220S Analogue</p>
+                        
+                       </div>
+                   </div>
+                        <div class="item">
+                       <div class="item_img">
+                           <img src="image/siliconanalog.jpg">
+                       </div>
+                       <div class="item_content">
+                           <h3>Silicone </h3>
+                           <p>Symbol Silicone Analog-Digital</p>
+                       
+                       </div>
+                   </div>
+           
+                   <div class="item">
+                       <div class="item_img">
+                           <img src="image/swissstone.jpg">
+                       </div>
+                       <div class="item_content">
+                           <h3>SWISSTONE</h3>
+                           <p> Analogue Women's Watch </p>
+                     
+                       </div>
+                   </div>
+                    </div>
+	
+<!-- 
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <div class="container">
     <a class="navbar-brand" href="#">Watch shop</a>
@@ -49,6 +257,9 @@ else{ %>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="purchase.jsp">PURCHASE DETAIL</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="billing.jsp">BILLING</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">VIEW</a>
@@ -96,15 +307,16 @@ else{ %>
       <span class="visually-hidden">Next</span>
     </button>
   </div>--%>
-</header>
 
-<!-- Page Content -->
+<!-- </header>
+Page Content 
 <section class="py-5">
   <div class="container">
     <h1 class="fw-light"> John Mayer</h1>
     <p class="lead">A man’s got two shots for jewelry: a wedding ring and a watch. The watch is a lot easier to get on and off than a wedding ring.</p>
   </div>
 </section>
+-->
 
 <%}%>
 

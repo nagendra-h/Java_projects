@@ -10,9 +10,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%  
-workerdatabase.delete(u);  
-response.sendRedirect("vieeworker.jsp");  
-%>  
+<script>
+  alert("Worker details deleted.");
+
+</script>
+<script>  location.replace("vieeworker.jsp")
+</script> 
 </body>
 </html>

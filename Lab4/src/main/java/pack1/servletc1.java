@@ -1,6 +1,9 @@
 package pack1;
 
 import java.io.IOException;
+import pack1.workerdatabase.*;
+import pack1.worker.*;
+
 
 import java.io.PrintWriter;
 
@@ -20,17 +23,13 @@ import javax.servlet.http.HttpSession;
 public class servletc1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+   
     public servletc1() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.setIntHeader("Refersh",1);
@@ -87,6 +86,12 @@ public class servletc1 extends HttpServlet {
 			ss.setAttribute("name", n);
 			ss.setAttribute("password", n1);
 			response.sendRedirect("first.jsp");
+		}
+		else if(workerdatabase.validate(n,n1)) {
+			HttpSession ss=request.getSession();
+			ss.setAttribute("name", n);
+			ss.setAttribute("password", n1);
+			response.sendRedirect("billing.jsp");
 		}
 		else {
 			HttpSession ss=request.getSession();

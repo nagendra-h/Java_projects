@@ -1,5 +1,6 @@
 package pack1;
 import java.sql.*;  
+
 import java.util.ArrayList;  
 import java.util.List;  
 import pack1.User;  
@@ -67,12 +68,29 @@ public class UserDao {
 	            u.setName(rs.getString("name"));  
 	            u.setEmail(rs.getString("email"));  
 	            u.setPhoneno(rs.getLong("phoneno"));  
+	            
 	            list.add(u);  
 	        }  
 	    }catch(Exception e){System.out.println(e);}  
 	    System.out.println(list);
 	    return list;  
 	}  
+	
+	
+	public static int getAll2(){  
+         int m=0;	      
+	    try{  
+	        Connection con=getConnection();  
+	        PreparedStatement ps=con.prepareStatement("select count(*) as id1 from dealer");  
+	        ResultSet rs=ps.executeQuery();  
+	        rs.next()  ;
+	            User u=new User();  
+	             m=(rs.getInt("id1"));
+	            
+	    }catch(Exception e){System.out.println(e);}  
+	    return m;  
+	}  
+	
 	public static List<User> getRecordById(String id){  
 	    List<User> list=new ArrayList<User>();  
 

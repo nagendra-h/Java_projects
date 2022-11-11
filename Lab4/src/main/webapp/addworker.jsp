@@ -13,7 +13,7 @@
 <%  
 int i=workerdatabase.save(u);  
 if(i>=1){  
-response.sendRedirect("adduser-success.jsp");  
+response.sendRedirect("addworkersuccess.jsp");  
 }else{  
 response.sendRedirect("error1.jsp");  
 }  

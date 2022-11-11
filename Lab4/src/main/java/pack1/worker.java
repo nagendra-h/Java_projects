@@ -1,7 +1,13 @@
 package pack1;
 
 public class worker {
-	private String id,name,email;
+	private String id,name,email,password;
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	private long phoneno;
 	public String getId() {
 		return id;

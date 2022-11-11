@@ -2,6 +2,14 @@ package pack1;
 
 public class User {
 	private String id,name,email;
+	
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
+	}
+	int count;
 	private long phoneno;
 	public String getId() {
 		return id;

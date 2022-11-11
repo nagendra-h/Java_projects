@@ -7,7 +7,11 @@
 <title>Add User Success</title>
 </head>
 <body>
-<p>Record successfully saved!</p>  
-<jsp:include page="worker.jsp"></jsp:include>  
+<script>
+  alert("New worker details added.");
+
+</script>
+<script>  location.replace("worker.jsp")
+</script> 
 </body>
 </html>

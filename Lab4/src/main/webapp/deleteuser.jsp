@@ -10,9 +10,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%  
-UserDao.delete(u);  
-response.sendRedirect("viewuser.jsp");  
-%>  
+<script>
+  alert("dealer details deleted.");
+
+</script>
+<script>  location.replace("dealer.jsp")
+</script> 
 </body>
 </html>

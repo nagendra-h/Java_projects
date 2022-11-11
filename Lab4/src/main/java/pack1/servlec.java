@@ -33,18 +33,18 @@ public class servlec extends HttpServlet {
 		PrintWriter pc=response.getWriter();
 		String name=request.getParameter("name");
 		String password=request.getParameter("password");
-		if(database1.validate(name,password)) {
-			pc.println("fucking success");
-		}
-		else {
-			pc.println("bitch no");
-		}
-		if(name.equalsIgnoreCase("admin") && password.equalsIgnoreCase("admin")) {
-			pc.println("YES");
-		}
-		else {
-			pc.println("NO");
-		}
+//		if(database1.validate(name,password)) {
+//			pc.println("fucking success");
+//		}
+//		else {
+//			pc.println("bitch no");
+//		}
+//		if(name.equalsIgnoreCase("admin") && password.equalsIgnoreCase("admin")) {
+//			pc.println("YES");
+//		}
+//		else {
+//			pc.println("NO");
+//		}
 	}
 
 }

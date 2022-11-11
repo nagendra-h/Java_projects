@@ -21,11 +21,12 @@ public class workerdatabase {
 
 	        Connection con=getConnection();  
 	        PreparedStatement ps=con.prepareStatement(  
-	"insert into worker values(?,?,?,?)");  
+	"insert into worker values(?,?,?,?,?)");  
 	        ps.setString(1,u.getId());  
 	        ps.setString(2,u.getName());  
 	        ps.setString(3,u.getEmail());  
 	        ps.setLong(4,u.getPhoneno());  
+	        ps.setString(5,u.getPassword());  
 	        status=ps.executeUpdate();  
 	    }catch(Exception e){System.out.println(e);}  
 	    return status;  
@@ -40,7 +41,8 @@ public class workerdatabase {
 	        ps.setString(1,u.getName());  
 	        ps.setString(2,u.getEmail());  
 	        ps.setLong(3,u.getPhoneno());  
-	        ps.setString(4,u.getId());  
+	        ps.setString(4,u.getPassword());  
+	        ps.setString(5,u.getId());  
 	        status=ps.executeUpdate();  
 	    }catch(Exception e){System.out.println(e);}  
 	    return status;  
@@ -56,27 +58,45 @@ public class workerdatabase {
 	  
 	    return status;  
 	}  
-	public static List<User> getAllRecords(){  
-	    List<User> list=new ArrayList<User>();  
+	public static boolean validate(String id,String pass){  
+	    boolean status=false;  
+	    try{  
+	        Connection con=getConnection();  
+	        PreparedStatement ps=con.prepareStatement("select id,password from worker where id=? and password=?");  
+	        ps.setString(1,id);
+	        ps.setString(2,pass);
+	        ResultSet rs=ps.executeQuery();
+	        if(rs.next()) {
+	        	status=true;
+	        }
+	    }catch(Exception e){System.out.println(e);} 
+	    
+	    return status;
+	  
+	      
+	}
+	public static List<worker> getAllRecords(){  
+	    List<worker> list=new ArrayList<worker>();  
 	      
 	    try{  
 	        Connection con=getConnection();  
 	        PreparedStatement ps=con.prepareStatement("select * from worker");  
 	        ResultSet rs=ps.executeQuery();  
 	        while(rs.next()){  
-	            User u=new User();  
+	            worker u=new worker();  
 	            u.setId(rs.getString("id"));  
 	            u.setName(rs.getString("name"));  
 	            u.setEmail(rs.getString("email"));  
 	            u.setPhoneno(rs.getLong("phoneno"));  
+	            u.setPassword(rs.getString("password"));  
 	            list.add(u);  
 	        }  
 	    }catch(Exception e){System.out.println(e);}  
 	    System.out.println(list);
 	    return list;  
 	}  
-	public static List<User> getRecordById(String id){  
-	    List<User> list=new ArrayList<User>();  
+	public static List<worker> getRecordById(String id){  
+	    List<worker> list=new ArrayList<worker>();  
 
 	    try{  
 	        Connection con=getConnection();  
@@ -84,7 +104,7 @@ public class workerdatabase {
 	        ps.setString(1,id);  
 	        ResultSet rs=ps.executeQuery();  
 	        while(rs.next()){  
-	            User u=new User();  
+	            worker u=new worker();  
 	            u.setId(rs.getString("id"));  
 	            u.setName(rs.getString("name"));  
 	            u.setEmail(rs.getString("email"));  

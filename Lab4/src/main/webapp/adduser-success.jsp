@@ -7,7 +7,12 @@
 <title>Add User Success</title>
 </head>
 <body>
-<p>Record successfully saved!</p>  
-<jsp:include page="dealer.jsp"></jsp:include>  
+<script>
+  alert("New dealer details added.");
+
+</script>
+<script>  location.replace("dealer.jsp")
+</script>
+
 </body>
 </html>
